@@ -111,26 +111,8 @@ Visit [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🖼️ Screenshots
-
-![Main Chat UI](main6.png)
-
-![Chat Conversation Screen](screen6.png)
-
----
-
-## 🌐 Live Link
-_Add your deployed app link here_
-
----
-
 ## 🤝 Contributing
 Pull requests are welcome! For major changes, open an issue first to discuss what you would like to change.
-
----
-
-## 📄 License
-[MIT](LICENSE)
 
 ---
 
