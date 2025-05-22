@@ -4,6 +4,7 @@
 > **Screenshots:**
 > ![Main Chat UI](public/theme2.png)
 > ![Chat Conversation Screen](public/theme1.png)
+> ![Chat Conversation Screen](public/supabase-schema-mbiyqprayoxwhrfkncjo.png)
 
 ---
 
