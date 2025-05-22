@@ -2,8 +2,8 @@
 
 > **Live Demo:** _[Add your live link here]_  
 > **Screenshots:**
-> ![Main Chat UI](theme.png)
-> ![Chat Conversation Screen](screen6.png)
+> ![Main Chat UI](public/theme2.png)
+> ![Chat Conversation Screen](public/theme1.png)
 
 ---
 
