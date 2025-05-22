@@ -2,8 +2,8 @@
 
 > **Live Demo:** _[Add your live link here]_  
 > **Screenshots:**
-> ![Main Chat UI](theme.png)
-> ![Chat Conversation Screen](screen6.png)
+> ![Main Chat UI](public/theme2.png)
+> ![Chat Conversation Screen](public/theme1.png)
 
 ---
 
@@ -111,26 +111,8 @@ Visit [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🖼️ Screenshots
-
-![Main Chat UI](main6.png)
-
-![Chat Conversation Screen](screen6.png)
-
----
-
-## 🌐 Live Link
-_Add your deployed app link here_
-
----
-
 ## 🤝 Contributing
 Pull requests are welcome! For major changes, open an issue first to discuss what you would like to change.
-
----
-
-## 📄 License
-[MIT](LICENSE)
 
 ---
 
