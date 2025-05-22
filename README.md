@@ -1,6 +1,6 @@
 # Chat App
 
-> **Live Demo:** _[[Add your live link here](https://periskopechat.vercel.app/login)]_  
+> **Live Demo:** _[[live link](https://periskopechat.vercel.app/login)]_  
 > **Screenshots:**
 > ![Main Chat UI](public/theme2.png)
 > ![Chat Conversation Screen](public/theme1.png)
