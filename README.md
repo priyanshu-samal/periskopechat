@@ -209,5 +209,53 @@ export async function uploadFile(file: File, chatId: string): Promise<UploadedFi
 - File type and size are validated before upload.
 
 ---
+## 📴 Offline Support & IndexedDB Caching
 
+ ![Main Chat UI](public/theme3.png)
+
+### How Offline and Browser Caching Works
+
+- **Instant Loading:**
+  - All chats and messages are cached in the browser using [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+  - When you open the app, chats and messages load instantly from the local database, even before the network fetch completes.
+
+- **Offline Access:**
+  - You can view your chats and messages even when you are completely offline.
+  - The app will show the most recently cached data from your last online session.
+
+- **Offline Message Sending:**
+  - If you send a message while offline, it is immediately added to the chat UI with a "Sending…" status.
+  - The message is stored in an IndexedDB queue (`pending_messages` store) with a temporary ID and marked as `pending`.
+  - When you come back online, the app automatically syncs all pending messages to the server (Supabase), updates their status to `sent`, and replaces the temporary ID with the real one from the server.
+  - If a message fails to send, it is marked as `failed` and can be retried.
+
+- **No Duplicate Sending:**
+  - The app ensures that only messages with status `pending` are synced when you come back online.
+  - Once a message is successfully sent, it is removed from the pending queue, so it is never sent more than once.
+
+### Technical Overview
+
+- **IndexedDB Utility (`src/utils/indexedDb.ts`):**
+  - Stores chats, messages, and a queue of pending messages.
+  - Functions:
+    - `saveChats`, `getChats`: Cache and retrieve chat lists.
+    - `saveMessages`, `getMessagesByChatId`: Cache and retrieve messages for each chat.
+    - `addPendingMessage`, `getPendingMessages`, `updatePendingMessageStatus`: Manage the offline message queue.
+
+- **Conversation Component (`src/components/Conversation.tsx`):**
+  - On app load, messages are loaded from IndexedDB for instant display.
+  - When sending a message:
+    - The message is always added to IndexedDB and the UI, even if offline.
+    - If online, the message is sent to Supabase immediately.
+    - If offline, the message is queued and shown as "Sending…".
+  - When the app comes back online, all pending messages are synced to Supabase and their status is updated in the UI.
+  - Only messages with status `pending` are synced, preventing duplicates.
+
+### User Experience
+
+- **Fast:** Messages and chats appear instantly, even on slow or unreliable connections.
+- **Reliable:** You can send messages and use the app even when offline; everything syncs automatically when you reconnect.
+- **Seamless:** The UI clearly shows which messages are pending, sent, or failed, so you always know the status of your chat.
+
+---
 
